@@ -17,10 +17,101 @@ h1,h2,h3,h4,h5,h6{
     display: table;
 }
 
+.sticky-container {
+	height: 150vh;
+}
+
+.hed-text-container {
+	margin: 100px;
+}
+
+.hed-text {
+	font-weight: 500;
+	opacity: 0;
+}
+
+.deck {
+	opacity: 0;
+}
+
+.fade-in {
+  animation: fadeIn ease 5s;
+  -webkit-animation: fadeIn ease 5s;
+  -moz-animation: fadeIn ease 5s;
+  -o-animation: fadeIn ease 5s;
+  -ms-animation: fadeIn ease 5s;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity:0;
+  }
+  100% {
+    opacity:1;
+  }
+}
+
+@-moz-keyframes fadeIn {
+  0% {
+    opacity:0;
+  }
+  100% {
+    opacity:1;
+  }
+}
+
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity:0;
+  }
+  100% {
+    opacity:1;
+  }
+}
+
+@-o-keyframes fadeIn {
+  0% {
+    opacity:0;
+  }
+  100% {
+    opacity:1;
+  }
+}
+
+/*idk why but the page does not like this block
+@-ms-keyframes fadeIn {
+  0% {
+    opacity:0;
+  }
+  100% {
+    opacity:1;
+}
+*/
+
+.deck-container { 
+	display:inline-block; 
+	margin: -80vh 0 0 100px;
+	width: 250px;
+}
+
+.deck {
+	margin: 15px;
+}
+
+.stripe {
+	display: block;
+	height: 10px;
+	background-color: #FFC000;
+	width: 100%;
+	transform: scaleX(0);  
+	transition: transform 2s ease-in-out;
+}
 
 /** Looping Background Video **/
 .looping-background-video{
-	position: relative;
+	position: -webkit-sticky; /* Safari */  
+	position: sticky;
+	top: 0;
 	top: 0;
 	left: 0;
 	width: 100vw;
@@ -43,6 +134,16 @@ h1,h2,h3,h4,h5,h6{
 		width: 100vw;
 		height: auto;
 	}
+}
+
+.byline-container {
+	margin: 50px 0 0 150px;
+}
+
+.byline-text {
+	color: #FFC000;
+	font-family: Lato, sans-serif;
+	opacity: 0;
 }
 
 

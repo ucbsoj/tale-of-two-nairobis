@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" type="text/css" href="css/style.css" />
-    <title>Master's Project</title>
+    <title>A tale of two Nairobis</title>
 
     <!-- Microdata Scema -->
     <script type="application/ld+json">
@@ -53,17 +53,69 @@
 
 
     <!-- main banner -->
-    <header role="banner" class="looping-background-video d-flex flex-column align-items-center justify-content-center">
+    <div class="sticky-container">
+      <header role="banner" class="looping-background-video justify-content-center">
 
-      <h1 class="text-white text-center display-1">Hello World</h1>
-      <p class="text-white">Something something</p>
+        <div class="hed-text-container d-flex flex-column">
 
-      <video muted playsinline autoplay loop>
-        <source src="https://temp-j100.s3.amazonaws.com/aidindying-background.mp4" type="video/mp4">
-        <img src="" alt="fallback">
-      </video>
+          <h1 class="hed-text text-white text-end display-1 text-uppercase">Salty.</h1>
+          <h1 class="hed-text text-white text-end display-1 text-uppercase">Acidic.</h1>
+          <h1 class="hed-text text-white text-end display-1 text-uppercase">Barely</h1>
+          <h1 class="hed-text text-white text-end display-1 text-uppercase">enough.</h1>
 
-    </header>
+        </div>
+
+        <div class="deck-container">
+          <span class="stripe"></span>
+          <p class="deck h2">Laboratory analysis shows that Nairobi's groundwater is not safe to drink</p>
+          <span class="stripe"></span>
+        </div>
+
+        <div class="byline-container display-8">
+          <p class="byline-text">By Kenneth Ng'etich</p>
+        </div>
+
+        <video muted playsinline autoplay loop>
+          <source src="https://temp-j100.s3.amazonaws.com/aidindying-background.mp4" type="video/mp4">
+          <img src="" alt="fallback">
+        </video>
+
+      </header>
+    </div>
+    <script>
+      window.addEventListener('scroll', function() {
+        //bring the header onto the page
+        [].forEach.call(document.getElementsByClassName('hed-text'), function(v,i,a) {
+          if (window.scrollY > 30) {
+            v.classList.add("fade-in");
+            v.style.opacity = 1;
+          }
+        });
+
+        let deck = document.getElementsByClassName("deck");
+        if (window.scrollY > 100) {
+          deck[0].classList.add("fade-in");
+          deck[0].style.opacity = 1;
+        }
+
+        //animate stripes above/below deck
+        [].forEach.call(document.getElementsByClassName('stripe'), function(v,i,a) {
+          if (window.scrollY > 110) {
+            v.style.transform = "scaleX(1)";
+          }
+        });
+
+        let byline = document.getElementsByClassName("byline-text");
+        if (window.scrollY > 150) {
+          byline[0].classList.add("fade-in");
+          byline[0].style.opacity = 1;
+        }
+
+        //transform: scaleX(1)
+        console.log(window.scrollY)
+      });
+
+    </script>
 
 
 
@@ -71,19 +123,6 @@
     <article role="main">
 
       <div class="container mt-5">
-
-
-
-        <!-- article headline and byline -->
-        <header class="my-5 row justify-content-center">
-          <div class="col-12 col-md-10 text-center">
-            <h2>Governments have widely varying policies and practices towards journalists</h2>
-            <p class="small pt-5">By Name Here</p>
-          </div>
-        </header>
-
-
-
 
         <div class="row justify-content-center">
           <div class="col-12 col-md-8 col-lg-6">
@@ -237,6 +276,7 @@
     <script type="text/javascript" src="js/jquery-scroll-swap.js"></script>
     <script type="text/javascript" src="js/bootstrap.bundle.js"></script>
     <script type="text/javascript" src="js/stickyfill.min.js"></script>
+    <script type="text/javascript" src="js/scroll-header.js"></script>
     <script>
       jQuery(document).ready(function($){
 
