@@ -21,6 +21,8 @@ h1,h2,h3,h4,h5,h6{
 	height: 150vh;
 }
 
+/**TOPPER**/
+
 .hed-text-container {
 	margin: 100px;
 }
@@ -90,7 +92,9 @@ h1,h2,h3,h4,h5,h6{
 
 .deck-container { 
 	display:inline-block; 
-	margin: -80vh 0 0 100px;
+	position: absolute;
+	top: 20vh;
+	left: 50px;
 	width: 250px;
 }
 
@@ -106,8 +110,6 @@ h1,h2,h3,h4,h5,h6{
 	transform: scaleX(0);  
 	transition: transform 2s ease-in-out;
 }
-
-/** Looping Background Video **/
 .looping-background-video{
 	position: -webkit-sticky; /* Safari */  
 	position: sticky;
@@ -137,13 +139,60 @@ h1,h2,h3,h4,h5,h6{
 }
 
 .byline-container {
-	margin: 50px 0 0 150px;
+	position: absolute;
+	top: 80vh;
+	left: 50px;
 }
 
 .byline-text {
 	color: #FFC000;
 	font-family: Lato, sans-serif;
 	opacity: 0;
+}
+
+/** water container illos with animated water streams on scroll **/
+.water-flows-container {
+	display: flex;
+	flex-direction: row;
+	width: 100%;
+	justify-content: space-evenly;
+	margin: 40px 0 40px 0;
+}
+
+.water-stream-container {
+	display: flex;
+	flex-direction: column;
+}
+
+.container-illo {
+	width: 80px;
+	margin-bottom: 10px;
+}
+
+
+
+/** side by side images/videos **/
+.side-by-side-container {
+	display: flex;
+	flex-direction: row;
+	width: 100vw;
+	margin: 30px calc(50% - 50vw);
+}
+
+.side-by-side-container > .figure {
+	margin: 0;
+	width: 50vw;
+}
+
+.side-by-side-container > video {
+	margin: 0;
+	width: 50vw;
+}
+
+@media only screen and (max-width: 600px) {
+  .side-by-side-container {
+  	flex-direction: column;
+  }
 }
 
 
