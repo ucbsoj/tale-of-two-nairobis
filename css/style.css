@@ -21,20 +21,76 @@ h1,h2,h3,h4,h5,h6{
 	height: 150vh;
 }
 
-.hed-text-container {
-	margin: 100px;
+/**TOPPER**/
+header {
+	min-height: 33.33vw;
+}
+
+@media only screen and (max-width: 600px) {
+
+	header {
+		min-height: 133vw;
+	}
+}
+
+.head-all-text-container {
+	height: 33.33vw;
+	padding: 30px;
+}
+
+.header-background {
+	position: absolute;
+	top: 0;
+	z-index: -100;
+}
+
+.head-text-container {
+	display: flex;
+	flex-direction: column;
 }
 
 .hed-text {
-	font-weight: 500;
-	opacity: 0;
+	font-weight: 300;
+	margin: 0;
+}
+
+.deck-container { 
+	width: 30vw;
+	margin-bottom: 20px;
 }
 
 .deck {
-	opacity: 0;
+	font-size: 1rem;
 }
 
-.fade-in {
+.byline-container {
+	background-color: rgb(0, 0, 0, .6);
+	display: inline-block;
+}
+
+.byline-container > p {
+	margin: 0;
+}
+
+.social-media-container {
+	display: flex;
+	flex-direction: row;
+	width: 280px;
+	margin: -20px auto 40px auto;
+	justify-content: space-evenly;
+}
+
+.social-media-icon {
+	width: 20px;
+	margin: 3px;
+}
+
+
+
+
+
+
+/*.fade-in {
   animation: fadeIn ease 5s;
   -webkit-animation: fadeIn ease 5s;
   -moz-animation: fadeIn ease 5s;
@@ -76,7 +132,7 @@ h1,h2,h3,h4,h5,h6{
   100% {
     opacity:1;
   }
-}
+}*/
 
 /*idk why but the page does not like this block
 @-ms-keyframes fadeIn {
@@ -88,15 +144,7 @@ h1,h2,h3,h4,h5,h6{
 }
 */
 
-.deck-container { 
-	display:inline-block; 
-	margin: -80vh 0 0 100px;
-	width: 250px;
-}
 
-.deck {
-	margin: 15px;
-}
 
 .stripe {
 	display: block;
@@ -106,8 +154,6 @@ h1,h2,h3,h4,h5,h6{
 	transform: scaleX(0);  
 	transition: transform 2s ease-in-out;
 }
-
-/** Looping Background Video **/
 .looping-background-video{
 	position: -webkit-sticky; /* Safari */  
 	position: sticky;
@@ -136,14 +182,79 @@ h1,h2,h3,h4,h5,h6{
 	}
 }
 
-.byline-container {
-	margin: 50px 0 0 150px;
+/*.byline-container {
+	position: absolute;
+	top: 80vh;
+	left: 50px;
 }
 
 .byline-text {
 	color: #FFC000;
 	font-family: Lato, sans-serif;
 	opacity: 0;
+}*/
+
+/** water container illos with animated water streams on scroll **/
+.water-flows-container {
+	display: flex;
+	flex-direction: row;
+	width: 100%;
+	justify-content: space-evenly;
+	margin: 40px 0 40px 0;
+}
+
+.water-stream-container {
+	display: flex;
+	flex-direction: column;
+}
+
+.container-illo {
+	width: 80px;
+	margin-bottom: 10px;
+}
+
+
+
+/** side by side images/videos **/
+.side-by-side-container {
+	display: flex;
+	flex-direction: row;
+	width: 100vw;
+	margin: 0 calc(50% - 50vw) 30px calc(50% - 50vw);
+}
+
+.side-by-side-container > .visual-container {
+	width: 50vw;
+	height: 33.33vw;
+}
+
+.side-by-side-container > .image-container {
+	overflow: hidden;
+	display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.side-by-side-container > .video-container {
+	overflow: hidden;
+    justify-content: center;
+    align-items: center;
+}
+
+.side-by-side-container > .visual-container > img, video {
+	min-width: 100%;
+	min-height: 100%;
+	margin: 0;
+}
+
+@media only screen and (max-width: 600px) {
+  .side-by-side-container {
+  	flex-direction: column;
+  }
+
+  .visual-container {
+  	width: 100vw;
+  }
 }
 
 
