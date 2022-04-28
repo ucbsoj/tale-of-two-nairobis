@@ -22,21 +22,75 @@ h1,h2,h3,h4,h5,h6{
 }
 
 /**TOPPER**/
+header {
+	min-height: 33.33vw;
+}
 
-.hed-text-container {
-	margin: 100px;
+@media only screen and (max-width: 600px) {
+
+	header {
+		min-height: 133vw;
+	}
+}
+
+.head-all-text-container {
+	height: 33.33vw;
+	padding: 30px;
+}
+
+.header-background {
+	position: absolute;
+	top: 0;
+	z-index: -100;
+}
+
+.head-text-container {
+	display: flex;
+	flex-direction: column;
 }
 
 .hed-text {
-	font-weight: 500;
-	opacity: 0;
+	font-weight: 300;
+	margin: 0;
+}
+
+.deck-container { 
+	width: 30vw;
+	margin-bottom: 20px;
 }
 
 .deck {
-	opacity: 0;
+	font-size: 1rem;
 }
 
-.fade-in {
+.byline-container {
+	background-color: rgb(0, 0, 0, .6);
+	display: inline-block;
+}
+
+.byline-container > p {
+	margin: 0;
+}
+
+.social-media-container {
+	display: flex;
+	flex-direction: row;
+	width: 280px;
+	margin: -20px auto 40px auto;
+	justify-content: space-evenly;
+}
+
+.social-media-icon {
+	width: 20px;
+	margin: 3px;
+}
+
+
+
+
+
+
+/*.fade-in {
   animation: fadeIn ease 5s;
   -webkit-animation: fadeIn ease 5s;
   -moz-animation: fadeIn ease 5s;
@@ -78,7 +132,7 @@ h1,h2,h3,h4,h5,h6{
   100% {
     opacity:1;
   }
-}
+}*/
 
 /*idk why but the page does not like this block
 @-ms-keyframes fadeIn {
@@ -90,17 +144,7 @@ h1,h2,h3,h4,h5,h6{
 }
 */
 
-.deck-container { 
-	display:inline-block; 
-	position: absolute;
-	top: 20vh;
-	left: 50px;
-	width: 250px;
-}
 
-.deck {
-	margin: 15px;
-}
 
 .stripe {
 	display: block;
@@ -138,7 +182,7 @@ h1,h2,h3,h4,h5,h6{
 	}
 }
 
-.byline-container {
+/*.byline-container {
 	position: absolute;
 	top: 80vh;
 	left: 50px;
@@ -148,7 +192,7 @@ h1,h2,h3,h4,h5,h6{
 	color: #FFC000;
 	font-family: Lato, sans-serif;
 	opacity: 0;
-}
+}*/
 
 /** water container illos with animated water streams on scroll **/
 .water-flows-container {
@@ -176,22 +220,40 @@ h1,h2,h3,h4,h5,h6{
 	display: flex;
 	flex-direction: row;
 	width: 100vw;
-	margin: 30px calc(50% - 50vw);
+	margin: 0 calc(50% - 50vw) 30px calc(50% - 50vw);
 }
 
-.side-by-side-container > .figure {
-	margin: 0;
+.side-by-side-container > .visual-container {
 	width: 50vw;
+	height: 33.33vw;
 }
 
-.side-by-side-container > video {
+.side-by-side-container > .image-container {
+	overflow: hidden;
+	display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.side-by-side-container > .video-container {
+	overflow: hidden;
+    justify-content: center;
+    align-items: center;
+}
+
+.side-by-side-container > .visual-container > img, video {
+	min-width: 100%;
+	min-height: 100%;
 	margin: 0;
-	width: 50vw;
 }
 
 @media only screen and (max-width: 600px) {
   .side-by-side-container {
   	flex-direction: column;
+  }
+
+  .visual-container {
+  	width: 100vw;
   }
 }
 

@@ -53,67 +53,81 @@
 
 
     <!-- main banner -->
-    <div class="sticky-container">
-      <header role="banner" class="looping-background-video justify-content-center">
 
-        <div class="hed-text-container d-flex flex-column">
+    <header role="banner" class="justify-content-center">
 
-          <h1 class="hed-text text-white text-end display-1 text-uppercase">Salty.</h1>
-          <h1 class="hed-text text-white text-end display-1 text-uppercase">Acidic.</h1>
-          <h1 class="hed-text text-white text-end display-1 text-uppercase">Barely</h1>
-          <h1 class="hed-text text-white text-end display-1 text-uppercase">enough.</h1>
+      <div class="head-all-text-container">
 
+        <div class="head-text-container">
+          <h1 class="hed-text text-white text-start display-3 text-uppercase">A tale</h1>
+          <h1 class="hed-text text-white text-start display-3 text-uppercase">of two</h1>
+          <h1 class="hed-text text-white text-start display-3 text-uppercase">Nairobis</h1>
         </div>
 
         <div class="deck-container">
-          <span class="stripe"></span>
-          <p class="deck h2">Laboratory analysis shows that Nairobi's groundwater is not safe to drink</p>
-          <span class="stripe"></span>
+          <h5 class="text-white text-start deck">This is the kicker for the story, which is usually about this length. Maybe a little longer.</h5>
         </div>
 
-        <div class="byline-container display-8">
-          <p class="byline-text">By Kenneth Ng'etich</p>
+        <div class="byline-container">
+          <p class="text-white text-start byline">
+            <span class="bold">By </span>
+            Kenneth Ng'etich |
+            <span class="bold"> Published </span>
+            Jan. 1, 1970
+          </p>
         </div>
 
-        <video muted playsinline autoplay loop>
-          <source src="https://temp-j100.s3.amazonaws.com/aidindying-background.mp4" type="video/mp4">
-          <img src="" alt="fallback">
-        </video>
+      </div>
 
-      </header>
-    </div>
+      <div class="side-by-side-container header-background">
+
+        <div class="visual-container image-container">
+          <img src="assets/desk-3.jpg" alt="Person reading a newspaper">
+        </div>
+
+        <div class="visual-container video-container">
+          <video muted playsinline autoplay loop>
+            <source src="https://temp-j100.s3.amazonaws.com/aidindying-background.mp4" type="video/mp4">
+            <img src="" alt="fallback">
+          </video>
+        </div>
+
+      </div>
+
+    </header>
+
     <script>
-      window.addEventListener('scroll', function() {
-        //bring the header onto the page
-        [].forEach.call(document.getElementsByClassName('hed-text'), function(v,i,a) {
-          if (window.scrollY > 30) {
-            v.classList.add("fade-in");
-            v.style.opacity = 1;
-          }
-        });
+      // window.addEventListener('scroll', function() {
+      //   //bring the header onto the page
+      //   [].forEach.call(document.getElementsByClassName('hed-text'), function(v,i,a) {
+      //     if (window.scrollY > 30) {
+      //       v.classList.add("fade-in");
+      //       v.style.opacity = 1;
+      //     }
+      //   });
 
-        let deck = document.getElementsByClassName("deck");
-        if (window.scrollY > 100) {
-          deck[0].classList.add("fade-in");
-          deck[0].style.opacity = 1;
-        }
+      //   let deck = document.getElementsByClassName("deck");
+      //   if (window.scrollY > 100) {
+      //     deck[0].classList.add("fade-in");
+      //     deck[0].style.opacity = 1;
+      //   }
 
-        //animate stripes above/below deck
-        [].forEach.call(document.getElementsByClassName('stripe'), function(v,i,a) {
-          if (window.scrollY > 110) {
-            v.style.transform = "scaleX(1)";
-          }
-        });
+      //   //animate stripes above/below deck
+      //   [].forEach.call(document.getElementsByClassName('stripe'), function(v,i,a) {
+      //     if (window.scrollY > 110) {
+      //       v.style.transform = "scaleX(1)";
+      //     }
+      //   });
 
-        let byline = document.getElementsByClassName("byline-text");
-        if (window.scrollY > 150) {
-          byline[0].classList.add("fade-in");
-          byline[0].style.opacity = 1;
-        }
+      //   let byline = document.getElementsByClassName("byline-text");
+      //   if (window.scrollY > 150) {
+      //     byline[0].classList.add("fade-in");
+      //     byline[0].style.opacity = 1;
+      //   }
 
-        //transform: scaleX(1)
-        console.log(window.scrollY)
-      });
+      //   //transform: scaleX(1)
+      //   console.log(window.scrollY)
+      // });
 
     </script>
 
@@ -124,48 +138,61 @@
 
       <div class="container mt-5">
 
+        <div class="social-media-container">
+          <a href="https://twitter.com/home" target="_blank">
+            <img class="social-media-icon" src="assets/twitter.svg" alt="Twitter icon"/>
+          </a>
+          <a href="https://www.instagram.com/" target="_blank">
+            <img class="social-media-icon" src="assets/instagram.svg" alt="Twitter icon"/>
+          </a>
+          <a href="https://linkedin.com/" target="_blank">
+            <img class="social-media-icon" src="assets/linkedin.svg" alt="Twitter icon"/>
+          </a>
+          <a href="https://facebook.com/" target="_blank">
+            <img class="social-media-icon" src="assets/facebook.svg" alt="Twitter icon"/>
+          </a>
+        </div>
+
         <div class="row justify-content-center">
+
           <div class="col-12 col-md-8 col-lg-6">
             <p>Such a code of conduct can, in the real world, be difficult to uphold consistently. Reporting and editing do not occur in a vacuum but always reflect the political context in which journalists, no less than other citizens, operate.</p>
             <p>A news organization's budget inevitably reflects decision-making about what news to cover, for what audience, and in what depth. When budgets are cut, editors may sacrifice reporters in distant news bureaus, reduce the number of staff assigned to low-income areas, or wipe entire communities from the publication's zone of interest.</p>
             <p>Publishers, owners and other corporate executives, especially advertising sales executives, could try to use their powers over journalists to influence how news is reported and published. For this reason, journalists traditionally relied on top management to create and maintain a "firewall" between the news and other departments in a news organization to prevent undue influence on the news department.</p>
             <p>There are over 242 codes of ethics in journalism that vary across various regions of the world.</p>
             <p>Governments have widely varying policies and practices towards journalists, which control what they can research and write, and what press organizations can publish. Some governments guarantee the freedom of the press; while other nations severely restrict what journalists can research or publish.</p>
+          </div>
+        </div>
+
+        <!-- Example of Scrollytelly part. -->
+        <div class="scroll-container">
+          
+          <p data-image="assets/map-of-nairobi_7.jpg" data-position="center">It's clear now that we didn't do enough to prevent these tools from being used for harm as well. That goes for fake news, foreign interference in elections, and hate speech, as well as developers and data privacy.</p>
+
+          <p data-image="assets/map-of-nairobi_7_grayscale.jpg" data-position="left">Starting in the 1940s, United States broadcast television channels would air 10-to-15-minute segments of news programming one or two times per evening. The era of live-TV news coverage would begin in the 1960s with the assassination of John F. Kennedy, broadcast and reported to live on a variety of nationally syndicated television channels.</p>
+
+          <p data-image="assets/map-of-nairobi_7.jpg" data-position="right">Journalistic conventions vary by country. In the United States, journalism is produced by media organizations or by individuals. Bloggers are often, but not always, journalists. The Federal Trade Commission requires that bloggers who write about products received as promotional gifts to disclose that they received the products for free. This is intended to eliminate conflicts of interest and protect consumers.</p>
+
+          <p data-image="assets/map-of-nairobi_7_grayscale.jpg" data-position="center">There are several forms of journalism with diverse audiences. Thus, journalism is said to serve the role of a "fourth estate", acting as a watchdog on the workings of the government. A single publication (such as a newspaper) contains many forms of journalism, each of which may be presented in different formats. Each section of a newspaper, magazine, or website may cater to a different audience.</p>
+
+        </div>
 
 
-            <div class="water-flows-container">
-              <div class="water-stream-container">
-                <img id="cylinder-1" class="container-illo" src="assets/cylinder-svgrepo-com.svg" alt="illustration of water container"/>
-                <img id="stream-1" class="stream-illo" src="assets/Vertical-wavy-line-test.svg" alt="illustration of water stream"/>
-              </div>
-              <div class="water-stream-container">
-                <img id="cylinder-2" class="container-illo" src="assets/cylinder-svgrepo-com.svg" alt="illustration of water container"/>
-                <img id="stream-1" class="stream-illo" src="assets/Vertical-wavy-line-test.svg" alt="illustration of water stream"/>
-              </div>
-              <div class="water-stream-container">
-                <img id="cylinder-3" class="container-illo" src="assets/cylinder-svgrepo-com.svg" alt="illustration of water container"/>
-                <img id="stream-1" class="stream-illo" src="assets/Vertical-wavy-line-test.svg" alt="illustration of water stream"/>
-              </div>
-
-            </div>
-
-
-            <p>Journalists in many nations have some privileges that members of the general public do not, including better access to public events, crime scenes and press conferences, and to extended interviews with public officials, celebrities and others in the public eye.</p>
-            <p>Journalists who elect to cover conflicts, whether wars between nations or insurgencies within nations, often give up any expectation of protection by government, if not giving up their rights to protection from the government. Journalists who are captured or detained during a conflict are expected to be treated as civilians and to be released to their national government. Many governments around the world target journalists for intimidation, harassment, and violence because of the nature of their work.</p>
-            <p>Journalists' interaction with sources sometimes involves confidentiality, an extension of freedom of the press giving journalists a legal protection to keep the identity of a confidential informant private even when demanded by police or prosecutors; withholding their sources can land journalists in contempt of court, or in jail.</p>
-            <p>Journalism is the production and distribution of reports on events. The word journalism applies to the occupation, as well as citizen journalists who gather and publish information. Journalistic media include print, television, radio, Internet, and, in the past, newsreels.</p>
-            <p>Concepts of the appropriate role for journalism vary between countries. In some nations, the news media are controlled by government intervention and are not fully independent. In others, the news media are independent of the government but instead operate as private industry motivated by profit. In addition to the varying nature of how media organizations are run and funded, countries may have differing implementations of laws handling the freedom of speech and libel cases.</p>
+        <div class="row justify-content-center">
+          <div class="col-12 col-md-8 col-lg-6">
+            <p>Journalistic conventions vary by country. In the United States, journalism is produced by media organizations or by individuals. Bloggers are often, but not always, journalists. The Federal Trade Commission requires that bloggers who write about products received as promotional gifts to disclose that they received the products for free. This is intended to eliminate conflicts of interest and protect consumers.</p>
+            <p>According to Robert McChesney, healthy journalism in a democratic country must provide an opinion of people in power and who wish to be in power, must include a range of opinions and must regard the informational needs of all people.</p>
           </div>
         </div>
 
 
         <div class="side-by-side-container">
-          <figure class="figure">
-            <img src="assets/reading_1350.jpg" alt="Person reading a newspaper" class="img-fluid d-block">
-          </figure>
-          <figure class="figure">
-            <img src="assets/desk-1.jpg" alt="Person reading a newspaper" class="img-fluid d-block">
-          </figure>
+          <div class="visual-container image-container">
+            <img src="assets/desk-3.jpg" alt="Person reading a newspaper">
+          </div>
+          <div class="visual-container image-container">
+            <img src="assets/desk-2.jpg" alt="Person reading a newspaper">
+          </div>
         </div>
 
 
@@ -180,15 +207,19 @@
 
 
         <div class="side-by-side-container">
-          <video muted playsinline autoplay loop>
-            <source src="https://temp-j100.s3.amazonaws.com/aidindying-background.mp4" type="video/mp4">
-            <img src="" alt="fallback">
-          </video>
+          <div class="visual-container video-container">
+            <video muted playsinline autoplay loop>
+              <source src="https://temp-j100.s3.amazonaws.com/aidindying-background.mp4" type="video/mp4">
+              <img src="" alt="fallback">
+            </video>
+          </div>
 
-          <video muted playsinline autoplay loop>
-            <source src="https://temp-j100.s3.amazonaws.com/aidindying-background.mp4" type="video/mp4">
-            <img src="" alt="fallback">
-          </video>
+          <div class="visual-container video-container">
+            <video muted playsinline autoplay loop>
+              <source src="https://temp-j100.s3.amazonaws.com/aidindying-background.mp4" type="video/mp4">
+              <img src="" alt="fallback">
+            </video>
+          </div>
         </div>
 
 
@@ -247,22 +278,6 @@
             <p>Starting in the 1940s, United States broadcast television channels would air 10-to-15-minute segments of news programming one or two times per evening. The era of live-TV news coverage would begin in the 1960s with the assassination of John F. Kennedy, broadcast and reported to live on a variety of nationally syndicated television channels. During the 60s and 70s, television channels would begin adding regular morning or midday news shows. Starting in 1980 with the establishment of CNN, news channels began providing 24-hour news coverage, a format which persists through today.</p>
           </div>
         </div>
-
-
-        <!-- Example of Scrollytelly part. -->
-        <div class="scroll-container">
-          
-          <p data-image="assets/desk-1.jpg" data-position="center">It's clear now that we didn't do enough to prevent these tools from being used for harm as well. That goes for fake news, foreign interference in elections, and hate speech, as well as developers and data privacy.</p>
-
-          <p data-image="assets/desk-2.jpg" data-position="left">Starting in the 1940s, United States broadcast television channels would air 10-to-15-minute segments of news programming one or two times per evening. The era of live-TV news coverage would begin in the 1960s with the assassination of John F. Kennedy, broadcast and reported to live on a variety of nationally syndicated television channels.</p>
-
-          <p data-image="assets/desk-3.jpg" data-position="right">Journalistic conventions vary by country. In the United States, journalism is produced by media organizations or by individuals. Bloggers are often, but not always, journalists. The Federal Trade Commission requires that bloggers who write about products received as promotional gifts to disclose that they received the products for free. This is intended to eliminate conflicts of interest and protect consumers.</p>
-
-          <p data-image="assets/desk-4.jpg" data-position="center">There are several forms of journalism with diverse audiences. Thus, journalism is said to serve the role of a "fourth estate", acting as a watchdog on the workings of the government. A single publication (such as a newspaper) contains many forms of journalism, each of which may be presented in different formats. Each section of a newspaper, magazine, or website may cater to a different audience.</p>
-
-        </div>
-
-
 
       </div><!-- close container -->
     </article>
