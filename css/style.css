@@ -11,6 +11,10 @@ h1,h2,h3,h4,h5,h6{
 	font-family: Lato, sans-serif;
 }
 
+h2 {
+	margin-top: 50px;
+}
+
 /** clearfix for position:sticky **/
 .sticky:before,
 .sticky:after {
@@ -73,89 +77,6 @@ header {
 	margin: 0;
 }
 
-/*.social-media-container {
-	display: flex;
-	flex-direction: row;
-	width: 280px;
-	margin: -20px auto 40px auto;
-	justify-content: space-evenly;
-}
-
-.social-media-icon {
-	width: 20px;
-	margin: 3px;
-}*/
-
-
-
-
-
-
-/*.fade-in {
-  animation: fadeIn ease 5s;
-  -webkit-animation: fadeIn ease 5s;
-  -moz-animation: fadeIn ease 5s;
-  -o-animation: fadeIn ease 5s;
-  -ms-animation: fadeIn ease 5s;
-}
-
-@keyframes fadeIn {
-  0% {
-    opacity:0;
-  }
-  100% {
-    opacity:1;
-  }
-}
-
-@-moz-keyframes fadeIn {
-  0% {
-    opacity:0;
-  }
-  100% {
-    opacity:1;
-  }
-}
-
-@-webkit-keyframes fadeIn {
-  0% {
-    opacity:0;
-  }
-  100% {
-    opacity:1;
-  }
-}
-
-@-o-keyframes fadeIn {
-  0% {
-    opacity:0;
-  }
-  100% {
-    opacity:1;
-  }
-}*/
-
-/*idk why but the page does not like this block
-@-ms-keyframes fadeIn {
-  0% {
-    opacity:0;
-  }
-  100% {
-    opacity:1;
-}
-*/
-
-
-
-.stripe {
-	display: block;
-	height: 10px;
-	background-color: #FFC000;
-	width: 100%;
-	transform: scaleX(0);  
-	transition: transform 2s ease-in-out;
-}
-
 /** Looping Background Video **/
 .looping-background-video{
 	position: relative;
@@ -184,45 +105,41 @@ header {
 }
 
 
-/*.looping-background-video{
-	position: sticky;
-	top: 0;
-	top: 0;
-	left: 0;
+.yellow-banner {
 	width: 100vw;
-	height: 100vh;
-	overflow: hidden;
-	background-color: rgba(0,0,0,0.6); 	
-	color: #fff; 						 make text color white 
+	margin:1em -100%; /* old browsers fallback */
+	margin:1em calc(50% - 50vw);
+	background-color:rgba(245, 221, 66);
+	padding: 30px;
 }
-.looping-background-video video{
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-	width: auto;
-	height: 100vh;
-	z-index: -100;
-}
-@media (min-aspect-ratio:16/9){
-	.looping-background-video video{
-		width: 100vw;
-		height: auto;
-	}
-}*/
 
-/*.byline-container {
+.chat-container-embed {
 	position: absolute;
-	top: 80vh;
-	left: 50px;
-}*/
-
-.byline-text {
-	background-color: transparent;
-	color: #FFC000;
-	font-family: Lato, sans-serif;
-	opacity: 0;
+	left: 30px;
 }
+
+
+.speech-bubble {
+  background: #efefef;
+  border-radius: 8px;
+  font-size: 1.2rem;
+  line-height: 1.3;
+  margin: 0 auto 40px;
+  max-width: 350px;
+  padding: 15px;
+  position: relative;
+  margin-left: 20px;
+
+}
+
+.speech-bubble:after {
+    border-right: 20px solid transparent;
+    border-top: 20px solid #efefef;
+    bottom: -20px;
+    content: "";
+    position: absolute;
+    left: 20px;
+  }
 
 /** water container illos with animated water streams on scroll **/
 .water-flows-container {
@@ -238,9 +155,15 @@ header {
 	flex-direction: column;
 }
 
-.container-illo {
-	width: 80px;
-	margin-bottom: 10px;
+.section-break {
+	margin-top: -50px;
+	justify-content: center;
+	display: flex;
+}
+
+.dinkus {
+	width: 400px;
+	height: 300px;
 }
 
 .yellow{
@@ -286,6 +209,23 @@ header {
 
   .visual-container {
   	width: 100vw;
+  }
+
+  .chat-container-embed {
+  	display: relative;
+  	margin: 20px 0 20px 0;
+  }
+
+  .dinkus {
+  	max-width: 90vw;
+  }
+}
+
+@media only screen and (max-width: 1160px) {
+
+  .chat-container-embed {
+  	position: relative;
+  	margin: 20px 0 20px 0;
   }
 }
 
