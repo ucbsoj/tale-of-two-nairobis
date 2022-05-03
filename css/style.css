@@ -151,9 +151,14 @@ header {
 	flex-direction: column;
 }
 
-.container-illo {
-	width: 80px;
-	margin-bottom: 10px;
+.section-break {
+	margin-top: -50px;
+	justify-content: center;
+	display: flex;
+}
+
+.dinkus {
+	max-width: 400px;
 }
 
 .yellow{
