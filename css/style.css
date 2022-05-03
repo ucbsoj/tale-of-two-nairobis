@@ -243,7 +243,9 @@ header {
 	margin-bottom: 10px;
 }
 
-
+.yellow{
+  background-color: #FFDE00;
+}
 
 /** side by side images/videos **/
 .side-by-side-container {
@@ -271,7 +273,7 @@ header {
     align-items: center;
 }
 
-.side-by-side-container > .visual-container > img, video {
+.side-by-side-container > .visual-container > img, .visual-container > video {
 	min-width: 100%;
 	min-height: 100%;
 	margin: 0;
