@@ -11,6 +11,10 @@ h1,h2,h3,h4,h5,h6{
 	font-family: Lato, sans-serif;
 }
 
+h2 {
+	margin-top: 50px;
+}
+
 /** clearfix for position:sticky **/
 .sticky:before,
 .sticky:after {
@@ -158,7 +162,8 @@ header {
 }
 
 .dinkus {
-	max-width: 400px;
+	width: 400px;
+	height: 300px;
 }
 
 .yellow{
@@ -209,6 +214,10 @@ header {
   .chat-container-embed {
   	display: relative;
   	margin: 20px 0 20px 0;
+  }
+
+  .dinkus {
+  	max-width: 90vw;
   }
 }
 
