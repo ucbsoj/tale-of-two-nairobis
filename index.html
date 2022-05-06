@@ -275,15 +275,38 @@
 
         <div class="yellow-banner">
           <div class="chat-container">
-            <div class="speech-bubble">
+            <div class="speech-bubble-banner" id="chat-1">
               <p>I cannot remember when parts of Riverside were not rationed for over 20 years</p>
             </div>
-            <div class="speech-bubble">
+            <div class="speech-bubble-banner" id="chat-2">
               <p>Basically, if they gave us water one day a week, we consider ourselves lucky</p>
             </div>
           </div>
-          <h2 class="text-white col-10 col-md-8 col-lg-6 offset-1 offset-md-2">The WhatsApp Cry: We want our water back</h2>
+          <div class="row justify-content-center">
+            <h2 class="text-white col-10 col-md-8 col-lg-6 offset-1 offset-md-2">The WhatsApp Cry: We want our water back</h2>
+          </div>
         </div>
+
+        <script type="text/javascript">
+          let index = 0
+          var interval = setInterval(function(){
+              // if (index > 0) {
+              //   let lastBubble = document.getElementById(`chat-${index}`);
+              //   lastBubble.classList.remove("fade-in");
+              // }
+
+              if (index < 2) {
+                index += 1;
+              } else {
+                index = 1;
+              }
+
+              let speechBubble = document.getElementById(`chat-${index}`);
+              speechBubble.classList.add("fade-in");
+
+              
+          }, 3000);
+        </script>
 
       
 
