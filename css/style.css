@@ -26,7 +26,10 @@ h2 {
 	height: 150vh;
 }
 
+
+/*############################################################*/
 /**TOPPER**/
+/*############################################################*/
 header {
 	min-height: 33.33vw;
 }
@@ -77,7 +80,10 @@ header {
 	margin: 0;
 }
 
+
+/*############################################################*/
 /** Looping Background Video **/
+/*############################################################*/
 .looping-background-video{
 	position: relative;
 	top: 0;
@@ -105,6 +111,37 @@ header {
 }
 
 
+/*############################################################*/
+/*span highlight for scrolly map*/
+/*############################################################*/
+.yellow{
+  background-color: #FFDE00;
+}
+
+
+/*############################################################*/
+/*Pull quotes*/
+/*############################################################*/
+.pull-quote-container {
+	margin: 40px auto;
+	/*background-color: #FFDE00;*/
+	padding: 30px;
+	border-top: solid 15px #FFDE00;
+	border-left: solid 15px #FFDE00;
+}
+
+.pull-quote {
+	margin: 0;
+}
+
+.pull-quote-source {
+	margin: 0;
+}
+
+
+/*############################################################*/
+/*WhatsApp Section*/
+/*############################################################*/
 .yellow-banner {
 	width: 100vw;
 	margin:1em -100%; /* old browsers fallback */
@@ -153,7 +190,6 @@ header {
 	-moz-animation: fadeIn 2s;
 	-o-animation: fadeIn 2s;
 	-ms-animation: fadeIn 2s;
-
 }
 
 .speech-bubble-banner:after {
@@ -199,20 +235,10 @@ header {
   100% {opacity:1;}
 }
 
-/** water container illos with animated water streams on scroll **/
-.water-flows-container {
-	display: flex;
-	flex-direction: row;
-	width: 100%;
-	justify-content: space-evenly;
-	margin: 40px 0 40px 0;
-}
 
-.water-stream-container {
-	display: flex;
-	flex-direction: column;
-}
-
+/*############################################################*/
+/*dinkus*/
+/*############################################################*/
 .section-break {
 	margin-top: -50px;
 	justify-content: center;
@@ -224,11 +250,10 @@ header {
 	height: 300px;
 }
 
-.yellow{
-  background-color: #FFDE00;
-}
 
+/*############################################################*/
 /** side by side images/videos **/
+/*############################################################*/
 .side-by-side-container {
 	display: flex;
 	flex-direction: row;
@@ -261,7 +286,9 @@ header {
 }
 
 
-
+/*############################################################*/
+/*All other device handling*/
+/*############################################################*/
 @media only screen and (max-width: 600px) {
   .side-by-side-container {
   	flex-direction: column;
@@ -290,7 +317,11 @@ header {
 }
 
 
-/** Sticky for scrollytelling layout **/
-[data-sticky-graphic] {
-	top: 35%;
-}
+
+
+
+
+
+
+
+
