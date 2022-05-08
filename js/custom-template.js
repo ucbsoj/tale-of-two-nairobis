@@ -61,19 +61,39 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 /*Fade WhatsApp messages on and off screen*/
-let index = 0
-  var interval = setInterval(function(){
+const observer = new IntersectionObserver((entries) => { 
 
-      if (index < 5) {
-        index += 1;
-      } else {
-        index = 1;
+  if (entries[0].intersectionRatio > 0) {
+    console.log(`observer triggered`)
+
+    let index = 1
+    let speechBubble = document.getElementById(`chat-${index}`); // this is hacky, but I want the first message to load immediately
+    speechBubble.classList.add("fade-in");
+
+    var interval = setInterval(function(){
+      index += 1;
+
+      if (index == 5) {
+        clearInterval(interval);
       }
+
+      console.log(`adding chat ${index}`)
 
       let speechBubble = document.getElementById(`chat-${index}`);
       speechBubble.classList.add("fade-in");
 
-  }, 3000);
+    }, 3000);
+  }
+  
+}); 
+
+let bannerElem = document.getElementsByClassName("yellow-banner");
+
+observer.observe(bannerElem[0]); // TO-DO remove observer after all chats have been loaded onto page
+
+
+
+
 
 
 
