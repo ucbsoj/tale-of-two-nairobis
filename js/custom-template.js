@@ -9,7 +9,6 @@ const svgObserver = new IntersectionObserver((entries) => {
     if (entry.intersectionRatio > 0) {
 
       let svg = entry.target;
-      console.log(`changing src to ${svg.dataset.src}`);
       svg.src = svg.dataset.src;
       
     }
@@ -18,7 +17,6 @@ const svgObserver = new IntersectionObserver((entries) => {
 }); 
 
 let svgElems = document.querySelectorAll(".animated-svg");
-console.log(svgElems)
 
 svgElems.forEach(e => {
   svgObserver.observe(e);
@@ -27,7 +25,9 @@ svgElems.forEach(e => {
 
 
 /*Fade WhatsApp messages on and off screen*/
-const bubbleObserver = new IntersectionObserver((entries) => { 
+
+//BANNER
+const bannerBubbleObserver = new IntersectionObserver((entries) => { 
 
   if (entries[0].intersectionRatio > 0) {
 
@@ -42,8 +42,6 @@ const bubbleObserver = new IntersectionObserver((entries) => {
         clearInterval(interval);
       }
 
-      console.log(`adding chat ${index}`)
-
       let speechBubble = document.getElementById(`chat-${index}`);
       speechBubble.classList.add("fade-in");
 
@@ -54,7 +52,35 @@ const bubbleObserver = new IntersectionObserver((entries) => {
 
 let bannerElem = document.getElementsByClassName("yellow-banner");
 
-bubbleObserver.observe(bannerElem[0]); // TO-DO remove observer after all chats have been loaded onto page
+bannerBubbleObserver.observe(bannerElem[0]); // TO-DO remove observer after all chats have been loaded onto page
+
+//EMBEDDED IN TEXT
+const embedBubbleObserver = new IntersectionObserver((entries) => { 
+
+  if (entries[0].intersectionRatio > 0) {
+
+    let index = 6
+    let speechBubble = document.getElementById(`chat-${index}`); // this is hacky, but I want the first message to load immediately
+    speechBubble.classList.add("fade-in");
+
+    var interval = setInterval(function(){
+      index += 1;
+
+      if (index == 10) {
+        clearInterval(interval);
+      }
+
+      let speechBubble = document.getElementById(`chat-${index}`);
+      speechBubble.classList.add("fade-in");
+
+    }, 2000); //faster than banner
+  }
+  
+}); 
+
+let embedElem = document.getElementsByClassName("chat-container-embed");
+
+embedBubbleObserver.observe(embedElem[0]); // TO-DO remove observer after all chats have been loaded onto page
 
 
 
