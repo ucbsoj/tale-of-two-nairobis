@@ -1,70 +1,35 @@
 
 
-/*Lazy loader*/
-document.addEventListener("DOMContentLoaded", function() {
-  var lazyloadObjects;    
+/*Lazy load animated SVGs*/
+const svgObserver = new IntersectionObserver((entries) => { 
 
-  if ("IntersectionObserver" in window) {
-    lazyloadImages = document.querySelectorAll(".lazy");
-    const ioConfiguration = {
-      rootMargin: '-50% 0% -50% 0%',
-      threshold: 0
-    };
+  entries.forEach(entry => {
 
-    const centeredOnScreen = (entries, o) => {
-      entries.forEach(function(entry) {
-        if (entry.isIntersecting) {
-          var image = entry.target;
-          image.src = image.dataset.src;
-        }
-      });
+    // strangely, intersection observer gets called on first load. this makes sure we only trigger when el enters viewport
+    if (entry.intersectionRatio > 0) {
+
+      let svg = entry.target;
+      console.log(`changing src to ${svg.dataset.src}`);
+      svg.src = svg.dataset.src;
+      
     }
 
-    var imageObserver = new IntersectionObserver(centeredOnScreen, ioConfiguration)   
+  }); 
+}); 
 
-    lazyloadImages.forEach(function(image) {
-      imageObserver.observe(image);
-    });
+let svgElems = document.querySelectorAll(".animated-svg");
+console.log(svgElems)
 
-
-  } else {  
-    var lazyloadThrottleTimeout;
-    lazyloadImages = document.querySelectorAll(".lazy");
-    
-    function lazyload () {
-      if(lazyloadThrottleTimeout) {
-        clearTimeout(lazyloadThrottleTimeout);
-      }    
-
-      lazyloadThrottleTimeout = setTimeout(function() {
-        var scrollTop = window.pageYOffset;
-        lazyloadImages.forEach(function(img) {
-            if(img.offsetTop < (window.innerHeight + scrollTop)) {
-              img.src = img.dataset.src;
-              img.classList.remove('lazy');
-            }
-        });
-        if(lazyloadImages.length == 0) { 
-          document.removeEventListener("scroll", lazyload);
-          window.removeEventListener("resize", lazyload);
-          window.removeEventListener("orientationChange", lazyload);
-        }
-      }, 20);
-    }
-
-    document.addEventListener("scroll", lazyload);
-    window.addEventListener("resize", lazyload);
-    window.addEventListener("orientationChange", lazyload);
-  }
+svgElems.forEach(e => {
+  svgObserver.observe(e);
 })
 
 
 
 /*Fade WhatsApp messages on and off screen*/
-const observer = new IntersectionObserver((entries) => { 
+const bubbleObserver = new IntersectionObserver((entries) => { 
 
   if (entries[0].intersectionRatio > 0) {
-    console.log(`observer triggered`)
 
     let index = 1
     let speechBubble = document.getElementById(`chat-${index}`); // this is hacky, but I want the first message to load immediately
@@ -89,7 +54,72 @@ const observer = new IntersectionObserver((entries) => {
 
 let bannerElem = document.getElementsByClassName("yellow-banner");
 
-observer.observe(bannerElem[0]); // TO-DO remove observer after all chats have been loaded onto page
+bubbleObserver.observe(bannerElem[0]); // TO-DO remove observer after all chats have been loaded onto page
+
+
+
+
+
+
+
+/* attempt at handling browsers without Intersection Observer */
+
+// document.addEventListener("DOMContentLoaded", function() {
+//   var lazyloadObjects;    
+
+//   if ("IntersectionObserver" in window) {
+//     lazyloadImages = document.querySelectorAll(".lazy");
+//     const ioConfiguration = {
+//       rootMargin: '-50% 0% -50% 0%',
+//       threshold: 0
+//     };
+
+//     const centeredOnScreen = (entries, o) => {
+//       entries.forEach(function(entry) {
+//         if (entry.isIntersecting) {
+//           var image = entry.target;
+//           image.src = image.dataset.src;
+//         }
+//       });
+//     }
+
+//     var imageObserver = new IntersectionObserver(centeredOnScreen, ioConfiguration)   
+
+//     lazyloadImages.forEach(function(image) {
+//       imageObserver.observe(image);
+//     });
+
+
+//   } else {  
+//     var lazyloadThrottleTimeout;
+//     lazyloadImages = document.querySelectorAll(".lazy");
+    
+//     function lazyload () {
+//       if(lazyloadThrottleTimeout) {
+//         clearTimeout(lazyloadThrottleTimeout);
+//       }    
+
+//       lazyloadThrottleTimeout = setTimeout(function() {
+//         var scrollTop = window.pageYOffset;
+//         lazyloadImages.forEach(function(img) {
+//             if(img.offsetTop < (window.innerHeight + scrollTop)) {
+//               img.src = img.dataset.src;
+//               img.classList.remove('lazy');
+//             }
+//         });
+//         if(lazyloadImages.length == 0) { 
+//           document.removeEventListener("scroll", lazyload);
+//           window.removeEventListener("resize", lazyload);
+//           window.removeEventListener("orientationChange", lazyload);
+//         }
+//       }, 20);
+//     }
+
+//     document.addEventListener("scroll", lazyload);
+//     window.addEventListener("resize", lazyload);
+//     window.addEventListener("orientationChange", lazyload);
+//   }
+// })
 
 
 
