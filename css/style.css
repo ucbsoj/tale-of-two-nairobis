@@ -45,9 +45,9 @@ header {
 	}
 }
 
-.head-all-text-container {
-	height: 33.33vw;
-	padding: 30px;
+.head {
+	font-family: 'League Spartan', sans-serif;
+	text-align: center;
 }
 
 .header-background {
@@ -56,19 +56,9 @@ header {
 	z-index: -100;
 }
 
-.head-text-container {
-	display: flex;
-	flex-direction: column;
-}
-
-.hed-text {
-	font-weight: 300;
-	margin: 0;
-}
-
-.deck-container { 
-	width: 30vw;
-	margin-bottom: 20px;
+.deck { 
+	max-width: 80vw;
+	margin: 0 auto;
 }
 
 .deck {
@@ -114,6 +104,13 @@ header {
 	}
 }
 
+/*############################################################*/
+/*Social icons*/
+/*############################################################*/
+.social-container {
+  margin: 20px 0;
+}
+
 
 /*############################################################*/
 /*span highlight for scrolly map*/
@@ -154,6 +151,17 @@ header {
 .subhead-decor {
 	color: var(--primary-yellow);
 }
+
+/*############################################################*/
+/*Chapter title (whatsapp only one that isn't in a video*/
+/*############################################################*/
+
+.chapter-title {
+	font-family: 'League Spartan', sans-serif;
+	font-size: calc(2.4rem + .9vw);
+    line-height: .8;
+}
+
 
 
 /*############################################################*/
@@ -350,13 +358,38 @@ header {
   .dinkus {
   	max-width: 90vw;
   }
+
+	.chat-container-banner {
+		flex-direction: column;
+		justify-content: space-evenly;
+		margin-bottom: 30px;
+	}
+
+	#chat-1, #chat-3, #chat-5 {
+		margin-top: 0;
+		margin-left: 10px;
+	}
+
+	#chat-2, #chat-4 {
+		margin-top: 0;
+		margin-left: 30px;
+	}
+
+	.bubble-container {
+		width: 80vw;
+	}
+
+	.banner {
+		margin-bottom: 30px;
+	}
 }
 
 @media only screen and (max-width: 1160px) {
 
   .chat-container-embed {
   	position: relative;
-  	margin: 20px 0 20px 0;
+  	margin: 20px auto 20px auto;
+  	left: auto;
   }
 }
 
