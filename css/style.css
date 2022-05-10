@@ -45,25 +45,15 @@ header {
 	}
 }
 
-.head-all-text-container {
-	height: 33.33vw;
-	padding: 30px;
+.head {
+	font-family: 'League Spartan', sans-serif;
+	text-align: center;
 }
 
 .header-background {
 	position: absolute;
 	top: 0;
 	z-index: -100;
-}
-
-.head-text-container {
-	display: flex;
-	flex-direction: column;
-}
-
-.hed-text {
-	font-weight: 300;
-	margin: 0;
 }
 
 .deck-container { 
