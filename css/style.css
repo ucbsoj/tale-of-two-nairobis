@@ -155,6 +155,17 @@ header {
 	color: var(--primary-yellow);
 }
 
+/*############################################################*/
+/*Chapter title (whatsapp only one that isn't in a video*/
+/*############################################################*/
+
+.chapter-title {
+	font-family: 'League Spartan', sans-serif;
+	font-size: calc(2.4rem + .9vw);
+    line-height: .8;
+}
+
+
 
 /*############################################################*/
 /*WhatsApp Section*/
